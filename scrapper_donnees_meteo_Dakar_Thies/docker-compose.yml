@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres_db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ejilshyg # Nom d'utilisateur pour PostgreSQL
+      POSTGRES_PASSWORD: lonzjsqfzminmbioqlor  # Mot de passe
+      POSTGRES_DB: vrtbgych  # Nom de la base de données
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Volume pour persister les données
+
+  app:
+    build:
+      context: .  
+      dockerfile: Dockerfile
+    image: meteo_dakar_thies
+    container_name: data_extractor
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_HOST: alpha.mkdb.sh.com  # Hôte de la base de données en ligne
+      DATABASE_PORT: 5432  # Port de PostgreSQL
+      DATABASE_USER: ejilshyg  # Nom d'utilisateur de la base de données
+      DATABASE_PASSWORD: lonzjsqfzminmbioqlor # Mot de passe de la base de données
+      DATABASE_NAME: vrtbgych # Nom de la base de données
+    command: ["python","main.py"]
+    ports:
+      - 5000:5000 # Port de l'application
+
+volumes:
+  postgres_data: {}

@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./app  # Répertoire contenant le code l'application
+    container_name: data_extractor
+    environment:
+      DATABASE_HOST: alpha.mkdb.sh.com  # Hôte de votre base de données en ligne
+      DATABASE_PORT: 5432                   # Port de PostgreSQL
+      DATABASE_USER: ejilshyg          # Nom d'utilisateur de la base de données
+      DATABASE_PASSWORD: lonzjsqfzminmbioqlor      # Mot de passe de la base de données
+      DATABASE_NAME: vrtbgych     # Nom de la base de données
+    ports:
+      - "8000:8000"  # Port de votre application si elle expose une API

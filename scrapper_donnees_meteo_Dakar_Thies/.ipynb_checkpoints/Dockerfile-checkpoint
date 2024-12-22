@@ -1,0 +1,22 @@
+
+# Utilise Python comme base
+FROM python:3.10
+
+# Répertoire de travail
+WORKDIR /app
+
+# Copie les fichiers de l'application
+COPY . .
+
+
+# Vérifier si l'environnement est Linux 
+RUN if [ "$(uname)" = "Linux" ]; then \
+    # Installation des dépendances listées sans installer les dependances supplementaires
+    pip install -r requirements.txt --no-deps; \
+    else \
+    # Installation des dépendances
+    pip install -r requirements.txt; \
+    fi
+
+# Commande à exécuter au démarrage du conteneur
+CMD ["python", "main.ipynb"]  
