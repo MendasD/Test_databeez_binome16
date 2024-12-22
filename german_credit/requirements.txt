@@ -197,7 +197,7 @@ ipyfilechooser==0.6.0
 ipykernel==5.5.6
 ipyleaflet==0.19.2
 ipyparallel==8.8.0
-ipython==7.34.0
+ipython==8.10.0
 ipython-genutils==0.2.0
 ipython-sql==0.5.0
 ipytree==0.2.2
@@ -221,7 +221,7 @@ jsonschema-specifications==2024.10.1
 jupyter-client==6.1.12
 jupyter-console==6.1.0
 jupyter-leaflet==0.19.2
-jupyter-server==1.24.0
+jupyter-server==2.11.2
 jupyter_core==5.7.2
 jupyterlab_pygments==0.3.0
 jupyterlab_widgets==3.0.13
@@ -500,7 +500,7 @@ torch @ https://download.pytorch.org/whl/cu121_full/torch-2.5.1%2Bcu121-cp310-cp
 torchaudio @ https://download.pytorch.org/whl/cu121/torchaudio-2.5.1%2Bcu121-cp310-cp310-linux_x86_64.whl
 torchsummary==1.5.1
 torchvision @ https://download.pytorch.org/whl/cu121/torchvision-0.20.1%2Bcu121-cp310-cp310-linux_x86_64.whl
-tornado==6.3.3
+tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.7.1
 traittypes==0.2.1
